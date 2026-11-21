@@ -43,9 +43,9 @@ const plans = [
 ]
 
 const reviews = [
-  { name: 'Анна Ковалёва', role: 'Head of Product, Flow', text: 'Мы сократили время от идеи до релиза в 4 раза. Команда наконец-то видит одну и ту же картину.', initials: 'АК', color: '#a78bfa' },
-  { name: 'Михаил Орлов', role: 'Founder, Level Up', text: 'Раньше аналитика жила в трёх сервисах. Теперь всё в одном окне, и я принимаю решения быстрее.', initials: 'МО', color: '#38bdf8' },
-  { name: 'Дарья Смирнова', role: 'CTO, Northwind', text: 'Внедрили за неделю. Безопасность и контроль доступа оказались на том уровне, который мы искали.', initials: 'ДС', color: '#f472b6' },
+  { name: 'Анна Ковалёва', role: 'Head of Product, Flow', text: 'Мы сократили время от идеи до релиза в 4 раза. Команда наконец-то видит одну и ту же картину.', initials: 'АК' },
+  { name: 'Михаил Орлов', role: 'Founder, Level Up', text: 'Раньше аналитика жила в трёх сервисах. Теперь всё в одном окне, и я принимаю решения быстрее.', initials: 'МО' },
+  { name: 'Дарья Смирнова', role: 'CTO, Northwind', text: 'Внедрили за неделю. Безопасность и контроль доступа оказались на том уровне, который мы искали.', initials: 'ДС' },
 ]
 
 const faqs = [
@@ -87,7 +87,7 @@ function Hero() {
       <div className="container hero-grid">
         <div className="hero-copy">
           <div className="badge"><span className="pulse" /> NEXA 2.0 уже доступна <Icon name="arrow" size={14} /></div>
-          <h1>Идеи становятся<br /><span className="gradient-text">продуктами быстрее</span></h1>
+          <h1>Идеи становятся<br /><span className="accent">продуктами быстрее</span></h1>
           <p className="lead">Платформа, где команда планирует, создаёт и запускает продукты. Более 12 000 команд уже выбрали NEXA.</p>
           <div className="hero-actions">
             <a className="btn" href="#start">Начать бесплатно <Icon name="arrow" size={18} /></a>
@@ -126,6 +126,9 @@ function Hero() {
           </div>
           <div className="float-card float-one"><span className="float-icon">↗</span><div><small>Конверсия</small><strong>+24,8%</strong></div></div>
           <div className="float-card float-two"><span className="dot" /> Релиз 2.0 опубликован</div>
+          <div className="callout callout-a"><b>01</b> Единое пространство</div>
+          <div className="callout callout-b"><b>02</b> Живые метрики</div>
+          <div className="callout callout-c"><b>03</b> Быстрые релизы</div>
         </div>
       </div>
       <div className="container logos">
@@ -140,7 +143,7 @@ function Features() {
     <section className="section" id="features">
       <div className="container">
         <div className="section-head">
-          <span className="eyebrow">Возможности</span>
+          <span className="eyebrow">(01) / Возможности</span>
           <h2>Всё, что нужно команде,<br />в одном рабочем пространстве</h2>
           <p>Меньше инструментов — больше результата. Каждая функция создана, чтобы убрать лишние движения.</p>
         </div>
@@ -164,7 +167,7 @@ function How() {
     <section className="section how" id="how">
       <div className="container">
         <div className="section-head">
-          <span className="eyebrow">Как это работает</span>
+          <span className="eyebrow">(02) / Как это работает</span>
           <h2>Три шага до запуска</h2>
         </div>
         <div className="steps">
@@ -186,7 +189,7 @@ function Reviews() {
     <section className="section" id="reviews">
       <div className="container">
         <div className="section-head">
-          <span className="eyebrow">Отзывы</span>
+          <span className="eyebrow">(03) / Отзывы</span>
           <h2>Команды, которые уже растут с NEXA</h2>
         </div>
         <div className="review-grid">
@@ -195,7 +198,7 @@ function Reviews() {
               <div className="stars">★★★★★</div>
               <p>«{r.text}»</p>
               <div className="review-author">
-                <span className="avatar" style={{ background: r.color }}>{r.initials}</span>
+                <span className="avatar">{r.initials}</span>
                 <div><strong>{r.name}</strong><small>{r.role}</small></div>
               </div>
             </article>
@@ -212,7 +215,7 @@ function Pricing() {
     <section className="section pricing" id="pricing">
       <div className="container">
         <div className="section-head">
-          <span className="eyebrow">Цены</span>
+          <span className="eyebrow">(04) / Цены</span>
           <h2>Простой выбор, честные условия</h2>
           <div className="toggle" role="group" aria-label="Период оплаты">
             <button className={!yearly ? 'active' : ''} onClick={() => setYearly(false)}>Месяц</button>
@@ -245,10 +248,10 @@ function Pricing() {
 function Faq() {
   const [active, setActive] = useState(0)
   return (
-    <section className="section faq-section">
+    <section className="section faq-section" id="faq">
       <div className="container faq-grid">
         <div className="section-head left">
-          <span className="eyebrow">FAQ</span>
+          <span className="eyebrow">(05) / Вопросы и ответы</span>
           <h2>Остались вопросы?</h2>
           <p>Не нашли ответ — напишите нам, и мы ответим в течение рабочего дня.</p>
           <a className="text-link" href="mailto:hello@nexa.example">hello@nexa.example <Icon name="arrow" size={16} /></a>
@@ -275,13 +278,13 @@ function Start() {
     <section className="cta" id="start">
       <div className="cta-orb" />
       <div className="container cta-inner">
-        <h2>Начните создавать<br /><span className="gradient-text">уже сегодня</span></h2>
+        <h2>Начните создавать<br /><span className="accent">уже сегодня</span></h2>
         <p>Бесплатно, без карты и обязательств. Первый проект — через 5 минут.</p>
         {sent ? (
-          <div className="success"><Icon name="check" /> Готово! Письмо со ссылкой отправлено на {email}</div>
+          <div className="success" role="status" aria-live="polite"><Icon name="check" /> Готово! Письмо со ссылкой отправлено на {email}</div>
         ) : (
           <form className="signup" onSubmit={(e) => { e.preventDefault(); if (email.includes('@')) setSent(true) }}>
-            <input type="email" required placeholder="you@company.com" value={email} onChange={(e) => setEmail(e.target.value)} aria-label="Ваш email" />
+            <input type="email" name="email" autoComplete="email" spellCheck={false} required placeholder="you@company.com" value={email} onChange={(e) => setEmail(e.target.value)} aria-label="Ваш email" />
             <button className="btn" type="submit">Попробовать бесплатно</button>
           </form>
         )}
@@ -312,8 +315,9 @@ function Footer() {
 export default function App() {
   return (
     <>
+      <a className="skip-link" href="#main">Перейти к содержимому</a>
       <Header />
-      <main>
+      <main id="main">
         <Hero />
         <Features />
         <How />
